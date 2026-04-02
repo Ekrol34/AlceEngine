@@ -5,7 +5,7 @@ using namespace alce;
 int main()
 {
     Alce.Window("AlceEngine Sample", DisplayMode::Default);
-    Alce.SetWindowIcon("dudegame/dudegame_icon.png");
+    // Alce.SetWindowIcon("dudegame/dudegame_icon.png");
     Alce.stanby = true;
 
     Debug.SetWaitTime(0);
