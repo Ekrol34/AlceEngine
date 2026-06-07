@@ -1,4 +1,4 @@
-# 🧩 TileMap
+# 🧩 Component: TileMap
 > <img src="https://pyxeledit.com/images/icon256.png" style="width: 18px; position: relative; top: 2px"> [This component is designed exclusively for tilemaps exported from PyxelEdit.](https://pyxeledit.com/)
 
 The ```TileMap``` component provides tile-based rendering for a ```GameObject```.

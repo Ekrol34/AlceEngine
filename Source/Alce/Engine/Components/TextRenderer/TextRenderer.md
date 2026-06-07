@@ -1,4 +1,4 @@
-# 🧩 TextRenderer
+# 🧩 Component: TextRenderer
 The ```TextRenderer``` component provides styled text rendering capabilities for a GameObject.
 It supports rich text formatting (bold, italic, underline, strike-through, and inline colors), optional background boxes with borders and rounded corners, fixed or auto-sized text boxes, word wrapping, and automatic alignment inside its bounding box.
 

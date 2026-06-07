@@ -1,4 +1,4 @@
-# 🧩 Animation2D
+# 🧩 Component: Animation2D
 
 The ```Animation2D``` component handles 2D sprite animations for a ```GameObject```. It supports multiple animations from spritesheets, various playback modes, and adjustable origin points. Animations can loop, play once, or show only the first frame.
 

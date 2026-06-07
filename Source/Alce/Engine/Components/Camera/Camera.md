@@ -1,4 +1,4 @@
-# 🧩 Camera
+# 🧩 Component: Camera
 
 The ```Camera``` component represents a 2D camera that can be attached to a ```GameObject```. It manages the visible area of the scene, allowing control over zoom, viewport, and smoothing of camera movement.
 

@@ -1,4 +1,4 @@
-# 📇 Image
+# 📇 UI: Image
 
 The ```Image``` UI element displays a 2D texture inside the UI system.
 It allows loading multiple textures, switching between them dynamically, enabling or disabling smoothing, and applying transform-based positioning, scaling, and rotation inherited from UIElement.

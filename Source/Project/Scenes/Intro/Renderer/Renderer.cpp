@@ -56,9 +56,10 @@ void IntroScene::Renderer::Update()
 		step = 2;
 		elapsed = 0.0f;
 		spriteRenderer->SetTexture("EngineLogo");
-		transform.scale = Vector2(1, 1);
+		transform.scale = Vector2(0.8f, 0.8f);
 		textRenderer->SetNewText("Alce Engine");
-		textRenderer->offset = Vector2(0, 180);
+		textRenderer->style = sf::Text::Style::Bold;
+		textRenderer->offset = Vector2(0, 280);
 		textRenderer->fontSize = 50;
 		textRenderer->font = "fonts/Merriweather/Merriweather-Bold.ttf";
 	}

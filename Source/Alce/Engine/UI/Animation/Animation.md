@@ -1,4 +1,4 @@
-# 📇 Animation
+# 📇 UI: Animation
 
 The ```Animation``` component handles 2D spritesheet-based animations for a UI or game element. It supports multiple animations, configurable playback modes, origin adjustments, directional playback, and frame-based timing. Animations can loop, play only once, or remain on the first frame.
 

@@ -1,4 +1,4 @@
-# 🧩 SpriteRenderer
+# 🧩 Component: SpriteRenderer
 
 The ```SpriteRenderer``` component is responsible for drawing 2D images (sprites) in the scene. It serves as the link between a GameObject's transform (position, rotation, scale) and the visual representation displayed on screen.
 

@@ -1,4 +1,4 @@
-# 🧩 Raycast2D
+# 🧩 Component: Raycast2D
 
 > <img src="https://box2d.org/images/logo.svg" style="width: 23px; position: relative; top: 1px"> [Built using the Box2d library.](https://github.com/erincatto/box2d)
 

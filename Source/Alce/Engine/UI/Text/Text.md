@@ -1,4 +1,4 @@
-# 📇 Text
+# 📇 UI: Text
 
 The ```Text``` UI element provides styled text rendering for user interface screens.
 It supports rich text formatting (bold, italic, underline, strike-through, and inline colors), optional background boxes with borders and rounded corners, fixed or auto-sized text boxes, word wrapping, and horizontal alignment inside its bounding box.

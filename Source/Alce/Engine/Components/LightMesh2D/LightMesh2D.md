@@ -1,4 +1,4 @@
-# 🧩 LightMesh2D
+# 🧩 Component: LightMesh2D
 
 > <img src="https://raw.githubusercontent.com/MiguelMJ/Candle/master/doc/logo.svg" style="width: 19px; position: relative; top: 2px"> [Built using the Candle library.](https://github.com/MiguelMJ/Candle)
 

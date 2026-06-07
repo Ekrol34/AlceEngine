@@ -1,4 +1,4 @@
-# 🧩 ParticleSystem
+# 🧩 Component: ParticleSystem
 
 The ```ParticleSystem``` component manages the emission, update, and destruction of multiple particles.
 It defines when and where particles are spawned, and applies a user-defined configuration function (behavior lambda) to each one.
