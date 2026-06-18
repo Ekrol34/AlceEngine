@@ -1,0 +1,54 @@
+#pragma once
+
+#include "../../Modules/Modules.hpp"
+
+namespace alce
+{
+    class Image : public UIElement
+    {
+    public:
+
+        Image() : UIElement("Image")
+        {
+            sprite = std::make_unique<sf::Sprite>();
+        }
+
+        void AddTexture(String file, String name);
+
+        void SetTexture(String name);
+
+        void RemoveTexture(String name);
+
+        void SetTextureSmooth(String name, bool flag);
+
+        void Init();
+
+        void Start();
+
+        void Update();
+
+        void Render();
+
+        void EventManager(sf::Event& event);
+
+        Vector2 originOffset = Vector2(0.0f, 0.0f);
+
+        Color borderColor = Colors::Transparent;
+        float borderWidth = 0.0f;
+
+		float borderRadius = 0.0f;
+        Color backgroundColor = Colors::Transparent;
+
+    private:
+
+        Vector2 boxPos;
+        Vector2 boxSize;
+
+        Dictionary<String, TexturePtr> textures;
+        std::unique_ptr<sf::Sprite> sprite;
+        String currentTexture = "";
+
+    };
+
+    typedef std::shared_ptr<Image> ImagePtr;
+}

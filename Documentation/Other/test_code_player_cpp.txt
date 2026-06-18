@@ -1,0 +1,91 @@
+// TextPtr text = std::make_shared<Text>();
+    // canvas->AddElement(text);
+    // text->position = Vector2(20, 20);
+    // text->padding = Vector2(10, 10);
+
+    // text->font = "fonts/Merriweather/Merriweather-Black.ttf";
+    // *text += "<color='green'>Alce Engine</color> Sample Project";
+    // *text += "\nby @gabrielbeguren";
+    // text->borderRadius = 7;
+    // text->borderWidth = 3;
+    // text->borderColor = Colors::Yellow;
+    // text->backgroundColor = Colors::Black;
+
+    // TextInputPtr ti = std::make_shared<TextInput>();
+    // canvas->AddElement(ti);
+    // ti->width = 500;
+    // ti->height = 45;
+    // ti->backgroundColor = Colors::Black;
+    // ti->textColor = Colors::White;
+    // ti->borderWidth = 1;
+    // ti->cursorColor = Colors::White;
+    // ti->positionType = UIElement::Relative;
+    // ti->position = Vector2(0.01, 0.925f);
+    // ti->fontSize = TextInput::Small;
+    // ti->onSubmit = [=](){
+    //     Debug.Log(ti->GetText());
+    // };
+
+    // ButtonPtr button = std::make_shared<Button>(); 
+    // canvas->AddElement(button);
+    // button->zIndex = 5;
+    // button->position = Vector2(40, 100);
+    // button->borderRadius = 2;
+    // button->borderWidth = 1;
+    // button->text = "guardar";
+    // button->borderColor = Colors::White;
+    // button->onClick = [](){
+    //     Alce.GetCurrentScene()->Save();
+
+    //     Storage.SetString("mi nombre", "Gabriel Bravo Eguren");
+    //     Storage.SetStringList("lista de la compra", {"patatas", "lombarda", "pollo"});
+    //     Storage.SetJson("json", Json("{\"test\": \"inicial\", \"funcionara\": \"quien sabe\"}"));
+    // };
+    
+    // ButtonPtr button2 = std::make_shared<Button>(); 
+    // canvas->AddElement(button2);
+    // button2->zIndex = 2;
+    // button2->position = Vector2(20, 100);
+    // button2->borderRadius = 2;
+    // button2->borderWidth = 1;
+    // button2->borderColor = Colors::Pink;
+    // button2->text = "borrar";
+    // button2->onClick = [](){
+    //     Storage.Delete("lista de la compra");
+    // };
+    //
+    // ButtonPtr button3 = std::make_shared<Button>(); 
+    // canvas->AddElement(button3);
+    // button3->position = Vector2(20, 100);
+    // button3->borderRadius = 5;
+    // button3->borderWidth = 2;
+    // button3->padding = Vector2(15, 10);
+    // button3->borderColor = Colors::White;
+    // button3->text = "-";
+    // button3->onClick = [](){
+    //     if(Alce.GetCurrentScene()->GridScale > 1)
+    //     {
+    //         Alce.GetCurrentScene()->GridScale -= 1;
+    //         Debug.Log(Alce.GetCurrentScene()->GridScale);
+    //     }
+
+    // };
+
+    // ButtonPtr button4 = std::make_shared<Button>(); 
+    // canvas->AddElement(button4);
+    // button4->position = Vector2(70, 100);
+    // button4->borderRadius = 5;
+    // button4->borderWidth = 2;
+    // button4->padding = Vector2(13, 10);
+    // button4->borderColor = Colors::White;
+    // button4->text = "+";
+    // button4->onClick = [&](){
+    //     Alce.GetCurrentScene()->GridScale += 1;
+    //     Debug.Log(Alce.GetCurrentScene()->GridScale);
+    // };
+
+    // ImagePtr image = std::make_shared<Image>();
+    // canvas->AddElement(image);
+    // image->position = Vector2(300, 25);
+    // image->AddTexture("meteor.png", "meteor");
+    // image->SetTexture("meteor");

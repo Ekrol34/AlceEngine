@@ -1,0 +1,62 @@
+#pragma once
+
+//---------------------------------------------------------------
+// Include all engine modules
+//---------------------------------------------------------------
+
+#include "Audio/Audio.hpp"
+#include "B2World/B2World.hpp"
+#include "Collections/Collections.hpp"
+#include "Color/Color.hpp"
+#include "Chrono/Chrono.hpp"
+#include "Core/Core.hpp"
+#include "Component/Component.hpp"
+#include "ContactListener/ContactListener.hpp"
+#include "Debug/Debug.hpp"
+#include "Exceptions/Exceptions.hpp"
+#include "Event/Event.hpp"
+#include "Event/EventEmitter.hpp"
+#include "Event/Listener.hpp"
+#include "Factory/Factory.hpp"
+#include "FileSystem/FileSystem.hpp"
+#include "GameObject/GameObject.hpp"
+#include "Generic/Generic.hpp"
+#include "Input/Input.hpp"
+#include "Interface/Interface.hpp"
+#include "Json/Json.hpp"
+#include "Math/Math.hpp"
+#include "Scene/Scene.hpp"
+#include "Storage/Storage.hpp"
+#include "String/String.hpp"
+#include "Transform/Transform.hpp"
+#include "Utils/Utils.hpp"
+
+//---------------------------------------------------------------
+// Shared enums used across the engine
+//---------------------------------------------------------------
+
+#pragma region enums
+
+enum AnimationMode
+{
+    LoopForwards,
+    LoopBackwards,
+    OnceForwards,
+    OnceBackwards,
+    FirstFrameOnly
+};
+
+enum OriginMode
+{
+    TopLeft,
+    TopMiddle,
+    TopRight,
+    MiddleLeft,
+    Center,
+    MiddleRight,
+    BottomLeft,
+    BottomMiddle,
+    BottomRight
+};
+
+#pragma endregion
