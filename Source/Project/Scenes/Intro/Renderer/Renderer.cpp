@@ -23,7 +23,7 @@ void IntroScene::Renderer::Init()
 
 	spriteRenderer = std::make_shared<SpriteRenderer>();
 	spriteRenderer->AddTexture("logo.png", "EngineLogo");
-	spriteRenderer->AddTexture("Ekrol34.png", "Ekrol34Logo");
+	spriteRenderer->AddTexture("ekrol34.png", "Ekrol34Logo");
 	AddComponent(spriteRenderer);
 
 	textRenderer = std::make_shared<TextRenderer>();
@@ -40,10 +40,10 @@ void IntroScene::Renderer::Start()
 	spriteRenderer->SetTexture("Ekrol34Logo");
 
 	textRenderer->SetNewText("Ekrol34");
-	transform.scale = Vector2(1, 1);
-	textRenderer->offset = Vector2(-9, 165);
+	transform.scale = Vector2(0.6f, 0.6f);
+	textRenderer->offset = Vector2(-9, 220);
 	textRenderer->font = "fonts/Basic-Regular/Basic-Regular.ttf";
-	textRenderer->fontSize = 80;
+	textRenderer->fontSize = 70;
 
 	elapsed = 0.0f;
 	step = 0;
@@ -56,10 +56,10 @@ void IntroScene::Renderer::Update()
 		step = 2;
 		elapsed = 0.0f;
 		spriteRenderer->SetTexture("EngineLogo");
-		transform.scale = Vector2(0.8f, 0.8f);
+		transform.scale = Vector2(0.9f, 0.9f);
 		textRenderer->SetNewText("Alce Engine");
 		textRenderer->style = sf::Text::Style::Bold;
-		textRenderer->offset = Vector2(0, 280);
+		textRenderer->offset = Vector2(0, 200);
 		textRenderer->fontSize = 50;
 		textRenderer->font = "fonts/Merriweather/Merriweather-Bold.ttf";
 	}
