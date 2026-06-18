@@ -90,6 +90,8 @@ namespace alce
 
         bool SetMasterVolume(float masterVolume);
 
+        void StopAll();
+
     private:
 
         Dictionary<String, AudioChannelPtr> channels;

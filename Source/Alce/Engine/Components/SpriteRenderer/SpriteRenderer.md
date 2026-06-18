@@ -21,7 +21,7 @@ Creates a new ```SpriteRenderer``` instance. Initializes the internal sprite and
 
 ## AddTexture
 ```cpp
-void AddTexture(String file, String name)
+bool AddTexture(String file, String name)
 ```
 
 Loads a texture from disk and registers it with a unique name.
@@ -34,9 +34,11 @@ Parameters:
 
 > __Notes__: _If the name already exists, the method logs a warning and ignores the request._
 
+Returns true if the process completed successfully.
+
 ## SetTexture
 ```cpp
-void SetTexture(String name)
+bool SetTexture(String name)
 ```
 Sets the current sprite texture by name.
 
@@ -46,11 +48,15 @@ Parameters:
 
 >__Notes__: _Logs a warning if the texture name does not exist._
 
+Returns true if the process completed successfully.
+
 ## SetAlpha
 ```cpp
-void SetAlpha(int alpha)
+bool SetAlpha(int alpha)
 ```
 Changes the transparency of the sprite by setting its alpha channel.
+
+Returns true if the process completed successfully.
 
 ## GetAlpha
 ```cpp
@@ -60,7 +66,7 @@ Returns the current alpha value (transparency) of the sprite.
 
 ## RemoveTexture
 ```cpp
-void RemoveTexture(String name)
+bool RemoveTexture(String name)
 ```
 
 Removes a texture from the component by its name.
@@ -71,9 +77,11 @@ Parameters:
 
 > __Notes__: _If the texture does not exist, a warning is logged._
 
+Returns true if the process completed successfully.
+
 ## SetTextureSmooth
 ```cpp
-void SetTextureSmooth(String name, bool flag = true)
+bool SetTextureSmooth(String name, bool flag = true)
 ```
 
 Enables or disables smoothing for a specific texture.
@@ -85,6 +93,8 @@ Parameters:
 * ```flag```: true to enable smoothing, false to disable.
 
 > __Notes__: _Logs a warning if the texture does not exist._
+
+Returns true if the process completed successfully.
 
 ## GetLocalCenter
 ```cpp

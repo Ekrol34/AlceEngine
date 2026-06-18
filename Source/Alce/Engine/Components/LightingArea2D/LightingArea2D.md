@@ -50,10 +50,12 @@ Returns the current offset of the lighting area relative to the GameObject.
 
 ## SetOpacity
 ```cpp
-void SetOpacity(float opacity)
+bool SetOpacity(float opacity)
 ```
 
 Sets the opacity of the lighting area. Value must be between 0.0f (fully transparent) and 1.0f (fully opaque). Values outside this range are ignored.
+
+Returns true if the process completed successfully.
 
 ## GetOpacity
 ```cpp

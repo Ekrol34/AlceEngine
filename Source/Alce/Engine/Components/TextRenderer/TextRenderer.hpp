@@ -140,7 +140,7 @@ namespace alce
 
 		void AddText(String str);	
 
-		void SetBackgroundTexture(String path, bool keepAspect = false);
+		bool SetBackgroundTexture(String path, bool keepAspect = false);
 
 		void RemoveBackgroundTexture();
 

@@ -75,7 +75,7 @@ void partDebug(GameObjectPtr g, String ms) {
     }
 }
 
-void Scene::AddGameObject(GameObjectPtr gameObject, String alias)
+bool Scene::AddGameObject(GameObjectPtr gameObject, String alias)
 {
     try
     {
@@ -88,7 +88,7 @@ void Scene::AddGameObject(GameObjectPtr gameObject, String alias)
                     if(go->alias == alias) 
                     {
                         Debug.Warning(String("Scene::AddGameObject -> Scene already contains alias name \"" + alias.ToAnsiString() + "\""));
-                        return;
+                        return false;
                     }
                 }
             }
@@ -97,7 +97,7 @@ void Scene::AddGameObject(GameObjectPtr gameObject, String alias)
         if(gameObjectList.Contains(gameObject))
         {
             Debug.Warning("Scene::AddGameObject -> Scene already contains gameObject \"{}\"", {gameObject->id});
-            return;
+            return false;
         }
 
         gameObjectList.Add(gameObject);
@@ -118,10 +118,13 @@ void Scene::AddGameObject(GameObjectPtr gameObject, String alias)
             if(!JsonFileExists()) 
                 Save();
         }
+
+        return true;
     }
     catch(const std::exception& e)
     {
         Debug.Warning("Scene::AddGameObject -> Internal error: {}", {std::string(e.what())});
+        return false;
     }
 }
 
@@ -130,18 +133,20 @@ List<GameObjectPtr> Scene::GetAllGameObjects()
     return gameObjectList;
 }
 
-void Scene::AddCanvas(CanvasPtr canvas, ComponentPtr camera)
+bool Scene::AddCanvas(CanvasPtr canvas, ComponentPtr camera)
 {
     if(canvasList.Contains(canvas))
     {
         Debug.Warning("Scene::AddCanvas -> Scene already contains Canvas \"{}\"", {canvas->id});
-        return;
+        return false;
     }
 
     canvasList.Add(canvas);
     canvas->view = &((Camera*)camera.get())->view;
     canvas->rotation = &camera->transform->rotation;
     canvas->scale = &((Camera*)camera.get())->zoom;
+
+    return true;
 }
 
 String Scene::GetName()

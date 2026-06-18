@@ -28,10 +28,12 @@ Returns the current shape associated with the LightMesh2D.
 
 ## SetShape
 ```cpp
-void SetShape(ShapePtr shape)
+bool SetShape(ShapePtr shape)
 ```
 
 Assigns a new shape to the LightMesh2D. If the shape is null, no changes are applied.
+
+Returns true if the process completed successfully.
 
 ## SetOffset
 ```cpp

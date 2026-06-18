@@ -4,27 +4,38 @@ The ```Audio``` module provides a simple system to manage and play sounds within
 
 # Behaviour
 
-The module is built around two main classes: ```Audio``` and ```AudioChannel```. 
+The module is built around two main classes: ```Audio``` and ```AudioChannel```.
 
-```Audio``` is a singleton that manages multiple ```AudioChannel``` instances. Each ```AudioChannel``` holds a collection of sounds, represented by ```sf::Sound``` objects from the SFML library, stored in a dictionary keyed by their name. The module handles loading, playing, pausing, stopping, and adjusting sound properties such as attenuation, pitch, volume, and whether the sound is relative to the listener.
+````Audio``` is a singleton that manages multiple ```AudioChannel``` instances. Each ```AudioChannel``` holds a collection of sounds, represented by ```sf::Sound``` objects from the SFML library, stored in a dictionary keyed by their name. The module handles loading, playing, pausing, stopping, and adjusting sound properties such as attenuation, pitch, volume, and whether the sound is relative to the listener.
+
+# ✳️ AudioChannel
+
+# Fields
+
+* ```float volume```: Current volume of the channel (0–100), independent of the master volume.
+
+* ```float masterVolume```: Master volume factor applied on top of the channel volume (0–100), set internally by the parent ```Audio``` instance.
 
 # Methods
+
 ## Add
 ```cpp
-void Add(String name, String file)
+bool Add(String name, String file)
 ```
 
 Adds a new sound to the channel.
 
-__Fields:__
+__Parameters:__
 
 * ```name```: Unique identifier for the sound.
 
 * ```file```: Path to the sound file to load.
 
+__Returns:__ True if the sound was added successfully, false if a sound with that name already exists or the file could not be loaded.
+
 ## Delete
 ```cpp
-void Delete(String name)
+bool Delete(String name)
 ```
 
 Removes a sound from the channel.
@@ -33,9 +44,11 @@ __Parameters:__
 
 * ```name```: Name of the sound to remove.
 
+__Returns:__ True if the sound was removed, false if it does not exist.
+
 ## Play
 ```cpp
-void Play(String name)
+bool Play(String name)
 ```
 
 Plays a sound.
@@ -44,9 +57,11 @@ __Parameters:__
 
 * ```name```: Name of the sound to play.
 
+__Returns:__ True if the sound was found and played, false otherwise.
+
 ## Pause
 ```cpp
-void Pause(String name)
+bool Pause(String name)
 ```
 
 Pauses a sound.
@@ -54,21 +69,25 @@ Pauses a sound.
 __Parameters:__
 
 * ```name```: Name of the sound to pause.
- 
+
+__Returns:__ True if the sound was found and paused, false otherwise.
+
 ## Stop
 ```cpp
-void Stop(String name)
+bool Stop(String name)
 ```
 
-Stops a sound completely, reseting the sound’s position to the start.
+Stops a sound completely, resetting the sound's position to the start.
 
 __Parameters:__
 
 * ```name```: Name of the sound to stop.
- 
+
+__Returns:__ True if the sound was found and stopped, false otherwise.
+
 ## SetAttenuation
 ```cpp
-void SetAttenuation(String name, float attenuation)
+bool SetAttenuation(String name, float attenuation)
 ```
 
 Sets how sound diminishes over distance.
@@ -78,10 +97,12 @@ __Parameters:__
 * ```name```: Name of the sound.
 
 * ```attenuation```: Attenuation factor (SFML standard).
- 
+
+__Returns:__ True if the sound was found and updated, false otherwise.
+
 ## SetLoop
 ```cpp
-void SetLoop(String name, bool flag = true)
+bool SetLoop(String name, bool flag = true)
 ```
 
 Enables or disables looping of a sound.
@@ -91,10 +112,12 @@ __Parameters:__
 * ```name```: Name of the sound.
 
 * ```flag```: True to loop, false to play once.
- 
+
+__Returns:__ True if the sound was found and updated, false otherwise.
+
 ## SetPitch
 ```cpp
-void SetPitch(String name, float pitch)
+bool SetPitch(String name, float pitch)
 ```
 
 Adjusts the pitch of the sound.
@@ -104,20 +127,24 @@ __Parameters:__
 * ```name```: Name of the sound.
 
 * ```pitch```: Pitch multiplier (1.0 is normal).
- 
+
+__Returns:__ True if the sound was found and updated, false otherwise.
+
 ## SetRelativeToListener
 ```cpp
-void SetRelativeToListener(String name, bool flag = true)
+bool SetRelativeToListener(String name, bool flag = true)
 ```
 
-Determines if the sound’s position is relative to the listener.
+Determines if the sound's position is relative to the listener.
 
 __Parameters:__
 
 * ```name```: Name of the sound.
 
 * ```flag```: True if relative to listener, false otherwise.
- 
+
+__Returns:__ True if the sound was found and updated, false otherwise.
+
 ## GetSound
 ```cpp
 SoundPtr GetSound(String name)
@@ -129,8 +156,8 @@ __Parameters:__
 
 * ```name```: Name of the sound.
 
-__ __Returns:____ Shared pointer to the sf::Sound object or nullptr if not found.
- 
+__Returns:__ Shared pointer to the ```sf::Sound``` object, or ```nullptr``` if not found.
+
 ## IsPlaying / IsPaused / IsStopped
 ```cpp
 bool IsPlaying(String name)
@@ -144,7 +171,7 @@ __Parameters:__
 
 * ```name```: Name of the sound.
 
- __Returns:__ True if the sound is in the corresponding state.
+__Returns:__ True if the sound is in the corresponding state, false otherwise (including if the sound does not exist).
 
 ## GetAttenuation / GetPitch / IsLooping / IsRelativeToListener
 ```cpp
@@ -160,19 +187,21 @@ __Parameters:__
 
 * ```name```: Name of the sound.
 
- __Returns:__ Corresponding value or default if the sound does not exist.
+__Returns:__ Corresponding value, or default (```0.0f``` / ```false```) if the sound does not exist.
 
 ## GetVolume / SetVolume
 ```cpp
 float GetVolume()
-void SetVolume(float volume)
+bool SetVolume(float volume)
 ```
 
 Gets or sets the volume for all sounds in the channel.
 
-Parameters (```SetVolume```):
+__Parameters (```SetVolume```):__
 
-* ``volume```: Desired volume level (≥ 0).
+* ```volume```: Desired volume level (0–100).
+
+__Returns (```SetVolume```):__ True if the volume was set successfully, false if out of range.
 
 ## IsPlaying
 ```cpp
@@ -189,6 +218,14 @@ void Clear()
 ```
 
 Removes all sounds from the channel.
+
+# ✳️ Audio
+
+# Fields
+
+* ```float masterVolume```: Global volume factor (0–100) applied to every channel managed by the pipeline.
+
+# Methods
 
 ## AddChannel
 ```cpp
@@ -223,4 +260,34 @@ __Parameters:__
 
 * ```name```: Name of the channel.
 
-__Returns:__ Shared pointer to the AudioChannel or nullptr if not found.
+__Returns:__ Shared pointer to the ```AudioChannel```, or ```nullptr``` if not found.
+
+## GetMasterVolume
+```cpp
+float GetMasterVolume()
+```
+
+Gets the global master volume.
+
+__Returns:__ Current master volume (0–100).
+
+## SetMasterVolume
+```cpp
+bool SetMasterVolume(float masterVolume)
+```
+
+Sets the global master volume, applying it to every existing channel.
+
+__Parameters:__
+
+* ```masterVolume```: Desired master volume level (0–100).
+
+__Returns:__ True if the volume was set successfully, false if out of range.
+
+## StopAll
+```cpp
+void StopAll()
+```
+
+Stops every sound across every channel managed by the pipeline.
+

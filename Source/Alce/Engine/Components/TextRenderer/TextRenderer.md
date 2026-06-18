@@ -78,11 +78,13 @@ Appends the given string to the existing text.
 
 ## SetBackgroundTexture
 ```cpp
-void SetBackgroundTexture(String path, bool keepAspect = false)
+bool SetBackgroundTexture(String path, bool keepAspect = false)
 ```
 
 Sets a background texture from a file path (relative to ./Assets/).
 keepAspect determines whether the texture preserves its original aspect ratio.
+
+Returns true if the process completed successfully.
 
 ## RemoveBackgroundTexture
 ```cpp

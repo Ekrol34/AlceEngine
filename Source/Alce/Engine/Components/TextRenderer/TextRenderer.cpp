@@ -12,7 +12,7 @@ void TextRenderer::AddText(String str)
     this->str += str.ToSFMLString();
 }   
 
-void TextRenderer::SetBackgroundTexture(String path, bool keepAspect)
+bool TextRenderer::SetBackgroundTexture(String path, bool keepAspect)
 {
     path = String("./Assets/" + path.ToAnsiString());
 
@@ -20,13 +20,15 @@ void TextRenderer::SetBackgroundTexture(String path, bool keepAspect)
     {
         hasBackgroundTexture = false;
         Debug.Warning("TextRenderer::SetBackgroundTexture -> Could not load texture from path: {}", {path});
-        return;
+        return false;
     }
     
     hasBackgroundTexture = true;
     keepAspectRatio = keepAspect;
 
     backgroundSprite.setTexture(backgroundTexture);
+
+    return true;
 }
 
 void TextRenderer::RemoveBackgroundTexture()

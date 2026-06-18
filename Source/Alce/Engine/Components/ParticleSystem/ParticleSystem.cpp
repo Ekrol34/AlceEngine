@@ -337,12 +337,12 @@ void ParticleSystem::SetEmitArea(ShapePtr emitArea)
     }
 }
 
-void ParticleSystem::Emit(bool flag)
+bool ParticleSystem::Emit(bool flag)
 {
     if(!startLambda)
     {
         Debug.Warning("ParticleSystem::Emit -> There is no particle behavior defined");
-        return;
+        return false;
     }
 
     if(!flag) 
@@ -350,13 +350,15 @@ void ParticleSystem::Emit(bool flag)
         if(!emit)
         {
             Debug.Warning("ParticleSystem::Stop -> ParticleSystem is not emitting");
-            return;
+            return false;
         }
 
         emit = false;
         elapsed.Reset();
     }
     else emit = true;
+
+    return true;
 }
 
 #pragma endregion

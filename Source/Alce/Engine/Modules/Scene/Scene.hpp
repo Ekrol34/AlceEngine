@@ -21,11 +21,11 @@ namespace alce
 
         void InitPhysics(Vector2 gravity);
 
-        void AddGameObject(GameObjectPtr gameObject, String alias = false);
+        bool AddGameObject(GameObjectPtr gameObject, String alias = false);
 
         List<GameObjectPtr> GetAllGameObjects();
 
-        void AddCanvas(CanvasPtr canvasPtr, ComponentPtr camera);
+        bool AddCanvas(CanvasPtr canvasPtr, ComponentPtr camera);
 
         String GetName();
 

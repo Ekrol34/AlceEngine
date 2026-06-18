@@ -338,4 +338,15 @@ AudioChannelPtr AUDIO::GetChannel(String name)
     return channels[name];
 }
 
+void AUDIO::StopAll()
+{
+    for(auto& it : channels)
+    {
+        for(auto& s : it.second->sounds)
+        {
+            s.second->stop();
+        }
+    }
+}
+
 #pragma endregion

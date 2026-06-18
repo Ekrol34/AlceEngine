@@ -47,10 +47,12 @@ Sets the spawn area for new particles.
 
 ## Emit
 ```cpp
-void Emit(bool flag = true)
+bool Emit(bool flag = true)
 ```
 
 If flag is true, starts emitting particles. If its false, stops emission and resets timer.
+
+Returns true if the process completed successfully.
 
 ## SetStart
 ```cpp
@@ -134,122 +136,156 @@ Creates a new ```Particle``` instance with default parameters. The physics body 
 
 ## Create
 ```cpp
-void Create(Vector2 position, bool enableCollision)
+bool Create(Vector2 position, bool enableCollision)
 ```
 
 Initializes the particle with a physics body at the given position.
 
+Returns true if the process completed successfully.
+
 ## SetDensity
 ```cpp
-void SetDensity(float density)
+bool SetDensity(float density)
 ```
 
 Updates the body’s mass density.
 
+Returns true if the process completed successfully.
+
 ## SetFriction
 ```cpp
-void SetFriction(float friction)
+bool SetFriction(float friction)
 ```
 
 Sets surface friction.
 
+Returns true if the process completed successfully.
+
 ## SetRestitution
 ```cpp
-void SetRestitution(float restitution)
+bool SetRestitution(float restitution)
 ```
 
 Sets elasticity for bounces.
 
+Returns true if the process completed successfully.
+
 ## SetRestitutionThreshold
 ```cpp
-void SetRestitutionThreshold(float threshold)
+bool SetRestitutionThreshold(float threshold)
 ```
 
 Controls minimum collision impulse for restitution.
 
+Returns true if the process completed successfully.
+
 ## ApplyForce
 ```cpp
-void ApplyForce(Vector2 force, bool wake)
+bool ApplyForce(Vector2 force, bool wake)
 ```
 
 Applies continuous force at the center.
 
+Returns true if the process completed successfully.
+
 ## ApplyLinearForce
 ```cpp
-void ApplyLinearForce(Vector2 force, bool wake)
+bool ApplyLinearForce(Vector2 force, bool wake)
 ```
 
 Applies an instantaneous impulse.
 
+Returns true if the process completed successfully.
+
 ## SetLinearVelocity
 ```cpp
-void SetLinearVelocity(Vector2 velocity)
+bool SetLinearVelocity(Vector2 velocity)
 ```
 
 Directly sets velocity.
 
+Returns true if the process completed successfully.
+
 ## SetHorizontalVelocity
 ```cpp
-void SetHorizontalVelocity(float vy) 
+bool SetHorizontalVelocity(float vy) 
 ```
 
 Adjusts only vertical velocity.
 
+Returns true if the process completed successfully.
+
 ## SetVerticalVelocity
 ```cpp
-void SetVerticalVelocity(float vx)
+bool SetVerticalVelocity(float vx)
 ```
 
 Adjusts only horizontal velocity.
 
+Returns true if the process completed successfully.
+
 ## SetAngularVelocity
 ```cpp
-void SetAngularVelocity(float va)
+bool SetAngularVelocity(float va)
 ```
 
 Sets rotation speed.
 
+Returns true if the process completed successfully.
+
 ## SetAngularDamping
 ```cpp
-void SetAngularDamping(float ad)
+bool SetAngularDamping(float ad)
 ```
 
 Slows down angular motion.
 
+Returns true if the process completed successfully.
+
 ## SetLinearDamping
 ```cpp
-void SetLinearDamping(float ld)
+bool SetLinearDamping(float ld)
 ```
 
 Slows down linear motion.
 
+Returns true if the process completed successfully.
+
 ## ApplyAngularImpulse
 ```cpp
-void ApplyAngularImpulse(float impulse)
+bool ApplyAngularImpulse(float impulse)
 ```
 
 Applies a rotation impulse.
 
+Returns true if the process completed successfully.
+
 ## ApplyTorque
 ```cpp
-void ApplyTorque(float torque, bool wake)
+bool ApplyTorque(float torque, bool wake)
 ```
 
 Applies continuous torque.
 
+Returns true if the process completed successfully.
+
 ## SetAngle
 ```cpp
-void SetAngle(float angle)
+bool SetAngle(float angle)
 ```
 
 Rotates the body to the given angle.
 
+Returns true if the process completed successfully.
+
 ## SetFixedRotation
 ```cpp
-void SetFixedRotation(bool flag)
+bool SetFixedRotation(bool flag)
 ```
 
 Locks/unlocks rotation.
+
+Returns true if the process completed successfully.
 
 ## SetLifetime
 ```cpp

@@ -41,7 +41,6 @@ void SharedScene::Player::Init()
     AddComponent(canvas);
 
     Audio.AddChannel("player");
-    Audio.GetChannel("player")->Add("gas", "GAS.wav");
 
 	// backgroundRenderer = std::make_shared<SpriteRenderer>();
 	// backgroundRenderer->AddTexture("dudegame/player/background.png", "background");
@@ -241,7 +240,6 @@ void SharedScene::Player::Init()
 void SharedScene::Player::Start()
 {   
     // anima->PlayAnimation("idle");
-    Audio.GetChannel("player")->Play("gas");
 }
 
 void SharedScene::Player::OnImpact(GameObject* other)

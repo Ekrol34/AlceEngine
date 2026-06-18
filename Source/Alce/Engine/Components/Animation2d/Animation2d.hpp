@@ -20,9 +20,9 @@ namespace alce
 
         void SetAnimationMode(AnimationMode mode);
 
-        void SetTimePerFrame(Time timePerFrame);
+        bool SetTimePerFrame(Time timePerFrame);
 
-        void SetTimePerFrame(float ms);
+        bool SetTimePerFrame(float ms);
 
         void Pause(bool flag = true);
 

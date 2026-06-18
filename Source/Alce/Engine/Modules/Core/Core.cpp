@@ -1,6 +1,7 @@
 #include "Core.hpp"
 #include "../Input/Input.hpp"
 #include "../Storage/Storage.hpp"
+#include "../Audio/Audio.hpp"
 
 using namespace alce;
 
@@ -641,11 +642,6 @@ void CORE::Run()
             Chrono.deltaTime.Reset().AddMiliseconds(elapsed.asMilliseconds());
             currentScene->Update();
 
-            // window.clear(clearColor.ToSFMLColor());
-            // currentScene->Render();
-
-            // window.display();
-
             window.clear(clearColor.ToSFMLColor());
 
             currentScene->Render();   
@@ -669,6 +665,8 @@ void CORE::Run()
     }
 
     exit = true;
+
+    Audio.StopAll();
     
     try
     {

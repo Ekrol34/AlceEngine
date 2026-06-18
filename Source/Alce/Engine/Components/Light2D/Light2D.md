@@ -58,10 +58,12 @@ Creates a new ```Light2D``` instance of the specified type. Default is radial. I
 
 ## SetFade
 ```cpp
-void SetFade(bool fade = true)
+bool SetFade(bool fade = true)
 ```
 
 Enables or disables fading of the light over time.
+
+Returns true if the process completed successfully.
 
 ## IsFading
 ```cpp
@@ -114,10 +116,12 @@ Returns the current beam angle.
 
 ## SetIntensity
 ```cpp
-void SetIntensity(float intensity)
+bool SetIntensity(float intensity)
 ```
 
 Sets the light intensity. Value must be between 0.0f (off) and 1.0f (full brightness). Values outside this range are ignored.
+
+Returns true if the process completed successfully.
 
 ## GetIntensity
 ```cpp

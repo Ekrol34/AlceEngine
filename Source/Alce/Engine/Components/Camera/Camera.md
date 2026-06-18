@@ -44,10 +44,12 @@ Sets the camera viewport. The viewport defines which portion of the window the c
 
 ## Zoom
 ```cpp
-void Zoom(float zoom)
+bool Zoom(float zoom)
 ```
 
 Sets the camera zoom level. Values must be greater than 0. Zooming in increases the size of objects on screen, while zooming out decreases it.
+
+Returns true if the process completed successfully.
 
 ## GetZoom
 ```cpp

@@ -200,14 +200,31 @@ bool Animation2D::IsDrawable()
 	return (animations.Length() > 0 && animations.HasKey(currentAnimation));
 }
 
-void Animation2D::SetTimePerFrame(Time time)
+bool Animation2D::SetTimePerFrame(Time time)
 {
-    msPerFrame = time.ToMiliseconds();
+    try
+    {
+        msPerFrame = time.ToMiliseconds();
+
+        return true;
+    }
+    catch(const std::exception& e)
+    {
+        return false;
+    }
 }
 
-void Animation2D::SetTimePerFrame(float ms)
+bool Animation2D::SetTimePerFrame(float ms)
 {
+    if(ms < 0)
+    {
+        Debug.Warning("Animation2D::SetTimePerFrame -> Value cannot be less than 0");
+        return false;
+    }
+
     msPerFrame = ms;
+
+    return true;
 }
 
 void Animation2D::Pause(bool flag)

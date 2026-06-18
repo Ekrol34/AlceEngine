@@ -60,7 +60,7 @@ Destroys the underlying physics body if it exists.
 
 ## CreateBody
 ```cpp
-void CreateBody(ShapePtr shape, BodyType bodyType = BodyType::dynamic_body, bool fixedRotation = false, MaskType maskType = MaskType::mask_1)
+bool CreateBody(ShapePtr shape, BodyType bodyType = BodyType::dynamic_body, bool fixedRotation = false, MaskType maskType = MaskType::mask_1)
 ```
 
 Creates and attaches a physics body to the component using the provided shape and parameters.
@@ -75,19 +75,23 @@ Parameters:
 
 * ```maskType```: Collision mask category.
 
+Returns true if the process completed successfully.
+
 ## DestroyBody
 ```cpp
-void DestroyBody()
+bool DestroyBody()
 ```
 
 Destroys the currently attached physics body, if any.
+
+Returns true if the process completed successfully.
 
 # Physical Properties
 
 ## Density
 ```cpp
 float GetDensity()
-void SetDensity(float density)
+bool SetDensity(float density)
 ```
 
 Gets or sets the density of the body. Updating density recalculates the mass.
@@ -95,7 +99,7 @@ Gets or sets the density of the body. Updating density recalculates the mass.
 ## Friction
 ```cpp
 float GetFriction()
-void SetFriction(float friction)
+bool SetFriction(float friction)
 ```
 
 Gets or sets the surface friction coefficient.
@@ -103,7 +107,7 @@ Gets or sets the surface friction coefficient.
 ## Restitution
 ```cpp
 float GetRestitution()
-void SetRestitution(float restitution)
+bool SetRestitution(float restitution)
 ```
 
 Gets or sets the restitution (bounciness).
@@ -111,7 +115,7 @@ Gets or sets the restitution (bounciness).
 ## RestitutionThreshold
 ```cpp
 float GetRestitutionThreshold()
-void SetRestitutionThreshold(float restitutionThreshold)
+bool SetRestitutionThreshold(float restitutionThreshold)
 ```
 
 Gets or sets the minimum relative speed at which restitution is applied.
@@ -134,84 +138,107 @@ Returns the gravity scaling factor applied to this body.
 
 ## ApplyForce
 ```cpp
-void ApplyForce(Vector2 force, bool wake = true)
+bool ApplyForce(Vector2 force, bool wake = true)
 ```
 
 Applies a continuous force to the body’s center.
 
+Returns true if the process completed successfully.
+
 ## ApplyLinearForce
 ```cpp
-void ApplyLinearForce(Vector2 force, bool wake = true)
+bool ApplyLinearForce(Vector2 force, bool wake = true)
 ```
 
 Applies an instantaneous linear impulse to the body’s center.
 
+Returns true if the process completed successfully.
+
 ## ApplyAngularImpulse
 ```cpp
-void ApplyAngularImpulse(float impulse)
+bool ApplyAngularImpulse(float impulse)
 ```
 
 Applies an angular impulse, instantly changing angular velocity.
 
+Returns true if the process completed successfully.
+
 ## ApplyTorque
 ```cpp
-void ApplyTorque(float torque, bool wake = true)
+bool ApplyTorque(float torque, bool wake = true)
 ```
 
 Applies continuous torque to the body.
 
+Returns true if the process completed successfully.
+
 ## LinearVelocity
 ```cpp
-void SetLinearVelocity(Vector2 velocity)
+bool SetLinearVelocity(Vector2 velocity)
 Vector2 GetLinearVelocity()
 ```
 
 Sets or gets the linear velocity.
 
+Returns true if the process completed successfully.
+
 ## SetVerticalVelocity
 ```cpp
-void SetVerticalVelocity(float vy)
+bool SetVerticalVelocity(float vy)
 ```
 
 Sets the vertical velocity, keeping horizontal unchanged.
 
+Returns true if the process completed successfully.
+
 ## SetHorizontalVelocity
 ```cpp
-void SetHorizontalVelocity(float vx)
+bool SetHorizontalVelocity(float vx)
 ```
 
 Sets the horizontal velocity, keeping vertical unchanged.
 
+Returns true if the process completed successfully.
+
 ## SetAngularVelocity
 ```cpp
-void SetAngularVelocity(float va)
+bool SetAngularVelocity(float va)
 ```
 
 Sets the angular velocity.
 
+Returns true if the process completed successfully.
+
+
 ## SetAngularDamping
 ```cpp
-void SetAngularDamping(float ad)
+bool SetAngularDamping(float ad)
 ```
 
 Sets the angular damping factor (slows down rotation over time).
 
+Returns true if the process completed successfully.
+
 ## SetLinearDamping
 ```cpp
-void SetLinearDamping(float ld)
+bool SetLinearDamping(float ld)
 ```
 
 Sets the linear damping factor (slows down movement over time).
+
+Returns true if the process completed successfully.
 
 # Transform & Orientation
 
 ## Angle
 ```cpp
 float GetAngle()
-void SetAngle(float angle)
+bool SetAngle(float angle)
 ```
 
 Gets or sets the body’s rotation angle in radians.
+
+Returns true if the process completed successfully.
 
 ## GetPosition
 ```cpp
@@ -222,35 +249,43 @@ Returns the current world position of the body.
 
 ## SetPosition
 ```cpp
-void SetPosition(Vector2 position, bool awake = true)
-void SetPosition(float x, float y, bool awake = true)
+bool SetPosition(Vector2 position, bool awake = true)
+bool SetPosition(float x, float y, bool awake = true)
 ```
 
 Moves the body to the given position.
 
+Returns true if the process completed successfully.
+
 ## SetRotation
 ```cpp
-void SetRotation(float angle, bool awake = true)
+bool SetRotation(float angle, bool awake = true)
 ```
 
 Rotates the body to the specified angle.
 
+Returns true if the process completed successfully.
+
 ## SetFixedRotation
 ```cpp
-void SetFixedRotation(bool flag)
+bool SetFixedRotation(bool flag)
 ```
 
 Enables or disables rotation for the body.
+
+Returns true if the process completed successfully.
 
 # Body Definition
 
 ## BodyType
 ```cpp
 BodyType GetBodyType()
-void SetBodyType(BodyType bodyType)
+bool SetBodyType(BodyType bodyType)
 ```
 
 Gets or sets the type of the body (dynamic, static, kinematic).
+
+Returns true if the process completed successfully.
 
 ## GetShapeType
 ```cpp

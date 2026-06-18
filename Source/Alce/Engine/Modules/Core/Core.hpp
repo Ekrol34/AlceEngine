@@ -1,5 +1,9 @@
 #pragma once
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include <memory>
 #include <string>
 #include <SFML/Graphics.hpp>

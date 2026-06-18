@@ -76,17 +76,21 @@ Creates a new ```Animation2D``` instance. Initializes the cardinal points for tr
 
 ## AddAnimation
 ```cpp
-void AddAnimation(String spritesheetFile, String name, int rows, int cols, int frameWidth, int frameHeight)
+bool AddAnimation(String spritesheetFile, String name, int rows, int cols, int frameWidth, int frameHeight)
 ```
 
 Adds an animation from a spritesheet, specifying the number of rows and columns and frame dimensions.
 
+Returns true if the process completed successfully.
+
 ## DeleteAnimation
 ```cpp
-void DeleteAnimation(String name)
+bool DeleteAnimation(String name)
 ```
 
 Removes an animation by its name.
+
+Returns true if the process completed successfully.
 
 ## SetOriginMode
 ```cpp
@@ -112,10 +116,12 @@ Changes the playback mode of the current animation.
 ## SetTimePerFrame
 ```cpp
 void SetTimePerFrame(Time timePerFrame)
-void SetTimePerFrame(float ms)
+bool SetTimePerFrame(float ms)
 ```
 
 Sets the duration of each frame in milliseconds.
+
+Returns true if the process completed successfully.
 
 ## Pause
 ```cpp

@@ -100,7 +100,7 @@ namespace alce
 
         void SetEmitArea(ShapePtr emitArea);
 
-        void Emit(bool flag = true);
+        bool Emit(bool flag = true);
 
         void SetStart(std::function<void(Particle&)> startLambda)
         {
